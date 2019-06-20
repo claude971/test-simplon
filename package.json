@@ -1,0 +1,30 @@
+{
+  "name": "nodeAuthTut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "html": "^1.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.15",
+    "mysql": "^2.16.0",
+    "nodemailer": "^4.7.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "path": "^0.12.7",
+    "root": "^3.2.0",
+    "shortid": "^2.2.14"
+  }
+}

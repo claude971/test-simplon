@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Attribution, ordinateurs, gestion">
+	<meta name="author" content="Claude Valoris">
+
+	<title>Gestion des ordinateurs</title>
+
+	<!-- Bootstrap CSS-->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Fonts supplémentaires -->
+	<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Plugin CSS pour les tableaux -->
+	<link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+	<!-- Styles personnels -->
+	<link href="css/admin.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body id="page-top">
+
+	<div class="container-fluid">
+ 		<div class="row">
+			<div class="col-sm-12"><h1>Gestion et attribution des ordinateurs</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<div class="card card-login mx-auto mt-5">
+					<div class="card-header">IDENTIFICATION</div>
+					<div id="mesg" class="alert alert-danger <%if (msg == ''){%> d-none<%}%> small"><%=msg%></div>
+					<div class="card-body">
+						<form action="login" method="post">
+							<div class="form-group">
+								<label for="inputId">Identifiant</label>
+								<input type="text" name="inputId" id="inputId" class="form-control" placeholder="identifiant administrateur" required="required" value="<%if (theId != ''){%><%=theId%><%}%>" style="position:relative">
+							</div>
+							<div class="form-group">
+								<label for="inputPassword"class="mt-1">Mot de passe</label>&nbsp;<span class="glyphicon glyphicon-eye-open"></span>
+								<input type="password" name ="inputPassword" id="inputPassword" class="form-control" placeholder="M&empty;t2p&alpha;&int;&int;&isin;" required="required" style="position:relative">
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-primary btn-block" value="Connexion">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div>
+		<!-- Sticky Footer -->
+        <footer class="sticky-footer w-100">
+          <div class="container-fluid my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Kemitic services 2019</span>
+            </div>
+          </div>
+        </footer>
+	</div><!-- container -->
+
+    <!-- Bootstrap JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="../vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- scripts partagés -->
+    <script src="../js/sb-admin.js"></script>
+
+  </body>
+
+</html>

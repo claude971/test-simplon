@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Attribution, ordinateurs, gestion">
+	<meta name="author" content="Claude Valoris">
+
+	<title>Gestion des ordinateurs</title>
+
+	<!-- Bootstrap CSS-->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Fonts supplémentaires -->
+	<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Plugin CSS pour les tableaux -->
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
+	<!-- Styles personnels -->
+	<link href="css/admin.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body id="page-top">
+
+	<div class="container-fluid">
+  		<div class="row">
+			<div class="col-sm-12"><h1>Gestion et attribution des ordinateurs</h1></div>
+		</div>
+  		<div class="row">
+			<div class="col-sm-12 text-right"><span class="welcolme">Bonjour <%=adminName%></span>&nbsp;<button class="btn"><i id="deconnecter" title="Se déconnecter" class="fas fa-xs fa-power-off"></i></button></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<div class="row">
+					<div class="card text-white bg-primary o-hidden h-75 mx-auto mt-5">
+						<div class="navcard card-body" id="attributions">
+							<div class="card-body-icon">
+							  <i class="fas fa-xs fa-laptop"></i>
+							</div>
+							<div class="mr-5">ATTRIBUTIONS DES ORDINATEURS</div>
+						</div>
+					</div>
+					<div class="card text-white bg-success o-hidden h-75 mx-auto mt-5">
+						<div class="navcard card-body" id="utilisateurs">
+							<div class="card-body-icon">
+							  <i class="fas fa-xs fa-user"></i>
+							</div>
+							<div class="mr-5">GESTION DES UTILISATEURS</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<div id="dataAttr" class="d-block">
+					<h2 class="mt-5">Liste des ordinateurs attribués</h2>
+					<% if(dataSet.length) {%>
+					<table id="attrib" class="mx-auto w-75">
+						<thead>
+							<tr><th>Utilisateur</th><th>Ordinateur</th><th>Durée</th><th>Démarrage</th><th></th></tr>
+						</thead>
+						<tbody>
+						<% for( i=0; i<dataSet.length; i++){%>
+							<tr>
+								<td><%=dataSet[i].user%></td>
+								<td><%=dataSet[i].ordi%></td>
+								<td><%=dataSet[i].duree%> mn</td>
+								<td><%=dataSet[i].depart%></td>
+								<td><i title="Supprimer l'attribution" cible="<%=dataSet[i].attrId%>" class="fas fa-xs fa-cut deleteA"></i></td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+					<%}
+					else{%>
+					Pas d'attribution en cours
+					<% } %>
+				</div>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<button id="nAttrib" type="button" class="mt-5 btn btn-info"><i class="fas fa-xs fa-plus"></i>&nbsp;Nouvelle atribution d'ordinateur</button>
+				<button id="retourAttrib" type="button" class="mt-5 btn btn-danger d-none"><i class="far fa-xs far fa-arrow-alt-circle-left"></i>&nbsp;Retour à la liste</button>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div id="formulaire" class="card card-login mx-auto mt-5 d-none">
+			<div class="card-header">ATTRIBUER UN ORDINATEUR</div>
+			<div class="card-body">
+				<form action="nAttrib" method="post">
+					<div class="form-group">
+						<label for="utilisateurs">Utilisateur</label>
+						<select id="ut" name="utilisateurs" class="form-control" required="required" style="position:relative">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ordinateurs" class="mt-1">Ordinateur</label>&nbsp;
+						<select id="ordinateurs" name="ordinateurs" class="form-control" required="required" style="position:relative">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="creneau" class="mt-1">Durée</label>&nbsp;
+						<select name ="creneau" class="form-control" required="required" style="position:relative">
+							<option value="30">30 mn</option>
+							<option value="60">60 mn</option>
+							<option value="90">90 mn</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<input id="attribuer" type="submit" class="btn btn-primary btn-block" value="Attribuer">
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<!-- Sticky Footer -->
+        <footer class="sticky-footer w-100">
+          <div class="container-fluid my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Kemitic services 2019</span>
+            </div>
+          </div>
+        </footer>
+	</div><!-- container -->
+
+    <!-- Bootstrap JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- plugin Jquery -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- plugin JavaScript pour la page -->
+    <script src="../vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- scripts principaux -->
+    <script src="../js/admin.js"></script>
+	<script src="../js/dt.js"></script>
+
+  </body>
+
+</html>

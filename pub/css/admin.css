@@ -1,0 +1,154 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+h1,h2{text-align:center}
+
+.deleteU, .deleteA{cursor:pointer}
+
+.o-hidden {
+  overflow: hidden !important;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.card-body-icon {
+  position: absolute;
+  z-index: 0;
+  top: -1rem;
+  right: 0;
+  opacity: 0.3;
+  font-size: 3rem;
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+.edgar{
+	color:#000;
+	cursor:pointer;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-columns {
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-columns {
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+:root {
+  --input-padding-x: 0.75rem;
+  --input-padding-y: 0.75rem;
+}
+
+.card-login {
+  display:block;
+  width:25rem;
+}
+
+.card-register {
+  max-width: 40rem;
+}
+
+.form-label-group {
+  position: relative;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+  height: auto;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+.card {
+  display:block;
+  width:25rem;
+}
+.card-header{text-align:center;font-weight:bold}
+footer.sticky-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 90px);
+  height: 80px;
+  background-color: #e9ecef;
+}
+
+footer.sticky-footer .copyright {
+  line-height: 1;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  footer.sticky-footer {
+    width: calc(100% - 225px);
+  }
+}
